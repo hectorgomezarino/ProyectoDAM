@@ -57,7 +57,6 @@
      <Compile Include="Assets\Scripts\AlienBullet.cs" />
      <Compile Include="Assets\Scripts\CharacterData.cs" />
      <Compile Include="Assets\Scripts\CommonLibrary.cs" />
-     <Compile Include="Assets\Scripts\CustomVariableClass.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MenuChange.cs" />
      <Compile Include="Assets\Scripts\PlayerBullet.cs" />

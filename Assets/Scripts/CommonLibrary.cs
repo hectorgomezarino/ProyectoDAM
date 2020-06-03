@@ -25,11 +25,11 @@ public class CommonLibrary : MonoBehaviour
         }
         totalShields = characterDataNew.totalShields;
         characterDataNew = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //save it
-        var textPlayerName = GameObject.Find("PlayerName").GetComponent<Text>();
-        textPlayerName.text = characterDataNew.characterName.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
+        //var textPlayerName = GameObject.Find("PlayerName").GetComponent<Text>();
+        //textPlayerName.text = characterDataNew.characterName.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
 
         //var textAmmo = GameObject.Find("AmmoCount").GetComponent<Text>();
-        textPlayerName.text = characterDataNew.Ammo.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
+        //textPlayerName.text = characterDataNew.Ammo.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
     }
 
     /*

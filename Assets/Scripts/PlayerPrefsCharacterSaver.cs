@@ -29,7 +29,7 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
 
     /*
      * @description: like update but taking parameters.
-     * @param char Action
+     * @param char Action, S to save, L to load.
      * @param CharacterData characterDataGived, not required
      * @return CharacterData object, depending the Action characterDataGived
      */
@@ -56,7 +56,7 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
         PlayerPrefs.SetFloat("power_CharacterSlot" + characterSlot, data.power);
         PlayerPrefs.SetInt("bullets_CharacterSlot" + characterSlot, data.Ammo);
         PlayerPrefs.Save();
-        Debug.Log("saved character");
+        Debug.Log("saved character : SaveCharacter()");
     }
 
     static CharacterData LoadCharacter(int characterSlot)
@@ -66,7 +66,17 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
         loadedCharacter.power = PlayerPrefs.GetFloat("power_CharacterSlot" + characterSlot);
         loadedCharacter.Ammo = PlayerPrefs.GetInt("bullets_CharacterSlot" + characterSlot);
 
-        //Debug.Log("loaded character");
+        Debug.Log("loaded character: LoadCharacter()");
         return loadedCharacter;
     }
+
+
+    /*test function, no es funcional ahora mismo TO DO: todo.*/
+    /*public void CustomVariableClass(int scoreInt, string nameStr, float timePlayedF)
+    {
+        CharacterData loadedCharacter = new CharacterData();
+        loadedCharacter.score = scoreInt;
+        loadedCharacter.playerName = nameStr;
+        loadedCharacter.timePlayed = timePlayedF;
+    }*/
 }
