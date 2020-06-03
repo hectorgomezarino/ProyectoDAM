@@ -11,7 +11,7 @@ public class MenuChange : MonoBehaviour
     void Start () {
         if (GameObject.Find("NombreJugadorText") != null) //validate if object label text exists
         {
-            var textNombreJugador = GameObject.Find("NombreJugadorText").GetComponent<Text>();
+            Text textNombreJugador = GameObject.Find("NombreJugadorText").GetComponent<Text>();
             textNombreJugador.text = ""; //clear the text
            //characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
             var characterName = PlayerPrefs.GetString("characterName_CharacterSlot" + 0);
