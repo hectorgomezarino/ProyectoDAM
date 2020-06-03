@@ -66,7 +66,7 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
         loadedCharacter.power = PlayerPrefs.GetFloat("power_CharacterSlot" + characterSlot);
         loadedCharacter.Ammo = PlayerPrefs.GetInt("bullets_CharacterSlot" + characterSlot);
 
-        Debug.Log("loaded character");
+        //Debug.Log("loaded character");
         return loadedCharacter;
     }
 }

@@ -10,15 +10,24 @@ public class SaveLoadGameData : MonoBehaviour
 {
     public InputField userNameInputField;
     public CharacterData characterDataNew;
+    string PlayerNameString;
 
 
-    void Start()
+    public void Start()
     {
         //TO DO: set the name of the player if exists at load
-        characterDataNew = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //save it
+        //characterDataNew = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load??? it
+
+        //Debug.Log(userNameInputField.text);
+        //PlayerNameString = userNameInputField.text;
+        ////Debug.Log(PlayerNameString);
+
         if (GameObject.Find("PlayerName") != null) //validate if object exists
         {
-            userNameInputField.text = characterDataNew.characterName.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
+            //Debug.Log(GameObject.Find("PlayerName"));
+            //userNameInputField.text = "Pepito"; //TO DO: this has a bug, solve id pending...
+
+            //userNameInputField.text = characterDataNew.characterName.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
         }
     }
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class CommonLibrary : MonoBehaviour
 {
-
+    public bool victory = false;
     public static CommonLibrary Instance = null;
     public CharacterData characterDataNew; //character data values
     private bool shieldsOngoing = true; //bool to see if there are any shields
     public int totalShields = 100;
     //GameObject.FindGameObjectsWithTag("totalShields").Length; //calculate the initial number of shields into the scene, TO DO: auto calculate
-    private bool victory = false;
 
     // Exploded Ship Image
     public Sprite explodedShipImage;
@@ -29,7 +28,7 @@ public class CommonLibrary : MonoBehaviour
         var textPlayerName = GameObject.Find("PlayerName").GetComponent<Text>();
         textPlayerName.text = characterDataNew.characterName.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
 
-        var textAmmo = GameObject.Find("AmmoCount").GetComponent<Text>();
+        //var textAmmo = GameObject.Find("AmmoCount").GetComponent<Text>();
         textPlayerName.text = characterDataNew.Ammo.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
     }
 
@@ -61,7 +60,7 @@ public class CommonLibrary : MonoBehaviour
         var textUIComp = GameObject.Find("WinText").GetComponent<Text>();
         textUIComp.enabled = true; // enable DEFEAT text
         if (!victory) {
-            CommonLibrary.Instance.ModifyWinStateText("All alliens Destroyed.");
+            CommonLibrary.Instance.ModifyWinStateText("All aliens Destroyed.");
             victory = true;
         }
         //CommonLibrary.Instance.ModifyTextUIScore(100);//modify score //TO DO: hacer solo una vez, no en bucle

@@ -32,7 +32,7 @@ public class Alien : MonoBehaviour
     public float maxFireRateTime = 3.0f;
 
     // Base firing wait time
-    public float baseFireWaitTime = 3.0f;
+    public float baseFireWaitTime = 2.0f;
 
     Coroutine alienRoutine;
 

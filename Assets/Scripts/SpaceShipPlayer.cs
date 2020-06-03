@@ -12,6 +12,14 @@ public class SpaceShipPlayer : MonoBehaviour
     float lastStep;
     public float timeBetweenSteps = 0.5f;//for delay the player shoot. I recomend between 0.2 to 2. Public to set it into player object
 
+    void Start()
+    {
+        //recoger variable de otro script cargado en el contexto:
+        /*GameObject CommonLibrary = GameObject.Find("CommonLibrary");
+        CommonLibrary otroScript = CommonLibrary.GetComponent<CommonLibrary>();
+        Debug.Log(otroScript.victory);*/
+    }
+
     void FixedUpdate()
     {
         float horzMove = Input.GetAxisRaw("Horizontal");
@@ -22,6 +30,10 @@ public class SpaceShipPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //get public var from other script:
+        GameObject CommonLibraryObject = GameObject.Find("CommonLibrary");
+        CommonLibrary otroScript = CommonLibraryObject.GetComponent<CommonLibrary>();
+
         if (Input.GetButtonDown("Jump"))
         {
             if (Time.time - lastStep > timeBetweenSteps)
@@ -33,7 +45,8 @@ public class SpaceShipPlayer : MonoBehaviour
                 SoundManager.Instance.PlayOneShot(SoundManager.Instance.bulletFire);
             }
         }
-        CommonLibrary.Instance.ModifyTextAlienCountUIScore(); // call once per frame count alien
+        if (otroScript.victory != true)
+            CommonLibrary.Instance.ModifyTextAlienCountUIScore(); // call once per frame count alien
         CommonLibrary.Instance.CountShields(); // call once per frame count alien
     }
 }
