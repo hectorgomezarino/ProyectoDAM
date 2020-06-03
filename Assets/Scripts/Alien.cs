@@ -26,13 +26,13 @@ public class Alien : MonoBehaviour
     public GameObject alienBullet;
 
     // Minimum time to wait before firing
-    public float minFireRateTime = 1.0f;
+    public float minFireRateTime = 0.5f; //antes era: 1.0f, demasiado rápido.
 
     // Maximum time to wait before firing
-    public float maxFireRateTime = 3.0f;
+    public float maxFireRateTime = 2f; //antes era: 3.0f, demasiado rápido.
 
     // Base firing wait time
-    public float baseFireWaitTime = 2.0f;
+    public float baseFireWaitTime = 1.2f;
 
     Coroutine alienRoutine;
 
@@ -135,7 +135,7 @@ public class Alien : MonoBehaviour
     }
 
     /*
-     *  TO DO: remove this??? hga '?'
+     *  TO DO: remove this??? hga '?', no veo si tiene sentido gestionar colisión entre alien y jugador.
      */
     void OnTriggerEnter2D(Collider2D col)
     {

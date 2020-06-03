@@ -497,11 +497,11 @@ RectTransform:
   - {fileID: 637370881}
   - {fileID: 1851322553}
   m_Father: {fileID: 723671310}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -5.5}
+  m_AnchoredPosition: {x: 0, y: 55}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485748620
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userNameInputField: {fileID: 485748620}
-  characterDataNew:
+  characterDataVal:
     characterName: 
     power: 0
     Ammo: 200
@@ -1020,7 +1020,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7048c71304c4df9a59439e50214271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playername: {fileID: 0}
+  characterDataNew:
+    characterName: 
+    power: 0
+    Ammo: 200
+    totalShields: 100
 --- !u!114 &723671307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1096,11 +1100,11 @@ RectTransform:
   - {fileID: 638233719}
   - {fileID: 165055365}
   - {fileID: 929086877}
-  - {fileID: 1600681025}
   - {fileID: 485748619}
   - {fileID: 1397033104}
   - {fileID: 1571186689}
   - {fileID: 1099322774}
+  - {fileID: 1600681025}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1122,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userNameInputField: {fileID: 0}
-  characterDataNew:
+  characterDataVal:
     characterName: 
     power: 0
     Ammo: 200
@@ -1222,11 +1226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1f649860796f371863a0a3fa8adf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDataNew:
-    characterName: 
-    power: 0
-    Ammo: 200
-    totalShields: 100
 --- !u!1 &929086876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,11 +1416,11 @@ RectTransform:
   m_Children:
   - {fileID: 1468708009}
   m_Father: {fileID: 723671310}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -139.6}
+  m_AnchoredPosition: {x: 0, y: -75.100006}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099322775
@@ -1465,7 +1464,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1988673009}
-        m_MethodName: changeToScene
+        m_MethodName: ChangeToScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1621,11 +1620,11 @@ RectTransform:
   - {fileID: 1704151956}
   - {fileID: 1983320981}
   m_Father: {fileID: 723671310}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -45.6}
+  m_AnchoredPosition: {x: 0, y: 83}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397033105
@@ -1843,11 +1842,11 @@ RectTransform:
   m_Children:
   - {fileID: 1091936986}
   m_Father: {fileID: 723671310}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -96.1}
+  m_AnchoredPosition: {x: 0, y: -31.599998}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1571186690
@@ -1970,11 +1969,11 @@ RectTransform:
   m_LocalScale: {x: 0.29999998, y: 0.31599998, z: 1}
   m_Children: []
   m_Father: {fileID: 723671310}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: 48.5}
+  m_AnchoredPosition: {x: 0.000012398, y: -146}
   m_SizeDelta: {x: 1148.8, y: 186.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1600681026
@@ -2622,7 +2621,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7048c71304c4df9a59439e50214271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playername: {fileID: 0}
+  characterDataNew:
+    characterName: 
+    power: 0
+    Ammo: 200
+    totalShields: 100
 --- !u!4 &1988673010
 Transform:
   m_ObjectHideFlags: 0

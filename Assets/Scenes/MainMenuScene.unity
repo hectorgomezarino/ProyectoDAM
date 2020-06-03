@@ -210,7 +210,7 @@ RectTransform:
   m_Children:
   - {fileID: 1084556518}
   m_Father: {fileID: 1309430163}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -258,7 +258,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1214956514}
-        m_MethodName: changeToScene
+        m_MethodName: ChangeToScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -418,7 +418,7 @@ RectTransform:
   m_Children:
   - {fileID: 1416221850}
   m_Father: {fileID: 1309430163}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -623,7 +623,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7048c71304c4df9a59439e50214271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playername: {fileID: 0}
+  characterDataVal:
+    characterName: 
+    power: 0
+    Ammo: 200
+    totalShields: 100
 --- !u!4 &1214956515
 Transform:
   m_ObjectHideFlags: 0
@@ -815,8 +819,8 @@ RectTransform:
   - {fileID: 935127897}
   - {fileID: 1490307508}
   - {fileID: 1556448136}
-  - {fileID: 975522910}
   - {fileID: 146983148}
+  - {fileID: 975522910}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -837,7 +841,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7048c71304c4df9a59439e50214271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playername: {fileID: 0}
+  characterDataVal:
+    characterName: 
+    power: 0
+    Ammo: 200
+    totalShields: 100
 --- !u!114 &1309430165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +1121,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1214956514}
-        m_MethodName: changeToScene
+        m_MethodName: ChangeToScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

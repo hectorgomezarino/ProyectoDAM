@@ -19,6 +19,7 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.S)) //when press S save data
@@ -69,6 +70,8 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
         Debug.Log("loaded character: LoadCharacter()");
         return loadedCharacter;
     }
+
+
 
 
     /*test function, no es funcional ahora mismo TO DO: todo.*/

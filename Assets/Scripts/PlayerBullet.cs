@@ -30,7 +30,7 @@ public class PlayerBullet : MonoBehaviour
             col.GetComponent<SpriteRenderer>().sprite = explodedAlienImage;
             CommonLibrary.Instance.ModifyTextUIScore(50); //add 100 points
             Destroy(gameObject);
-            Destroy(col.gameObject, 0.5f);
+            Destroy(col.gameObject, 0.1f);
             CommonLibrary.Instance.ModifyWinStateText("Alien Destroyed.");
         }
 

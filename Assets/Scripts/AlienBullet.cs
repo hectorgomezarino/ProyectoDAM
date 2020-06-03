@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class AlienBullet : MonoBehaviour
@@ -39,7 +37,6 @@ public class AlienBullet : MonoBehaviour
             CommonLibrary.Instance.ShieldsDamaged("Loosing shields by alien atack.", -2);
         }
     }
-
 
 
     void OnBecomeInvisible()

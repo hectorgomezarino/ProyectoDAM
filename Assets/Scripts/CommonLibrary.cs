@@ -125,7 +125,7 @@ public class CommonLibrary : MonoBehaviour
     public void ModifyShieldsPercent(string newText)
     {
         var textUIComp = GameObject.Find("ShieldsCount").GetComponent<Text>();
-        textUIComp.text = newText + "%"; //TO DO: este texto se muestra demasiado grande.
+        textUIComp.text = newText + "%";
     }
 
     /*
