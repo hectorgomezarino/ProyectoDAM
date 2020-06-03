@@ -32,7 +32,7 @@ public class SaveLoadGameData : MonoBehaviour
         string userName = userNameInputField.text;
         characterDataVal.characterName = userName; //set the new userName with the writed into field
         PlayerPrefsCharacterSaver.Instance.CustomAction('S', characterDataVal); //save it
-        // TO DO: delay this
+        // TODO: delay this
         textUIComp.text = "Info Saved.";
         textNombreJugador.text = userName;
     }

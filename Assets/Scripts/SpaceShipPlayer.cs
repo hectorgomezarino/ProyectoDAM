@@ -40,7 +40,7 @@ public class SpaceShipPlayer : MonoBehaviour
             {
                 lastStep = Time.time; //delay the player shot.
                 //int FirePosition = transform.position + 5;
-                //hga TO DO: usar una posición más elevada para crear el disparo
+                //hga TODO: usar una posición más elevada para crear el disparo
                 Instantiate(theBullet, transform.position, Quaternion.identity);
                 SoundManager.Instance.PlayOneShot(SoundManager.Instance.bulletFire);
             }

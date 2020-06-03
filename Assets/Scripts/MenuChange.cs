@@ -13,9 +13,10 @@ public class MenuChange : MonoBehaviour
         {
             Text textNombreJugador = GameObject.Find("NombreJugadorText").GetComponent<Text>();
             textNombreJugador.text = ""; //clear the text
-           //characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
+            //characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
+            //TODO: usar el método de arriba para recoger el nombre del jugador, es mucho más elegante.
             var characterName = PlayerPrefs.GetString("characterName_CharacterSlot" + 0);
-            textNombreJugador.text = characterName;
+            textNombreJugador.text = characterDataVal.characterName;
         }
     }
 

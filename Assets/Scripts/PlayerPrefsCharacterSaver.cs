@@ -74,7 +74,7 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
 
 
 
-    /*test function, no es funcional ahora mismo TO DO: todo.*/
+    /*test function, no es funcional ahora mismo TODO: todo.*/
     /*public void CustomVariableClass(int scoreInt, string nameStr, float timePlayedF)
     {
         CharacterData loadedCharacter = new CharacterData();

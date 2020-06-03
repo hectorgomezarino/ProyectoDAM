@@ -95,7 +95,7 @@ public class Alien : MonoBehaviour
         {
             var player = GameObject.Find("SpaceShip").GetComponent<Collider2D>(); //get the player colider for GameDefeat method
             CommonLibrary.Instance.GameDefeat(player);
-            StopCoroutine(alienRoutine); // stop the coroutine //stop alien coroutine //TO DO: this must be into GameDefeat
+            StopCoroutine(alienRoutine); // stop the coroutine //stop alien coroutine //TODO: this must be into GameDefeat
         }
     }
 
@@ -103,7 +103,7 @@ public class Alien : MonoBehaviour
     public IEnumerator changeAlienSprite()
     {
         while (true)
-        { //TO DO: bug detected, when alien is destroyed the new sprite by movement appears one second
+        { //TODO: bug detected, when alien is destroyed the new sprite by movement appears one second
             if (spriteRenderer.sprite == startingImage)
             {
                 spriteRenderer.sprite = altImage;
@@ -135,7 +135,7 @@ public class Alien : MonoBehaviour
     }
 
     /*
-     *  TO DO: remove this??? hga '?', no veo si tiene sentido gestionar colisión entre alien y jugador.
+     *  TODO: remove this??? hga '?', no veo si tiene sentido gestionar colisión entre alien y jugador.
      */
     void OnTriggerEnter2D(Collider2D col)
     {

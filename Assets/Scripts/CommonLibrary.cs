@@ -11,7 +11,8 @@ public class CommonLibrary : MonoBehaviour
     public CharacterData characterDataNew; //character data values
     private bool shieldsOngoing = true; //bool to see if there are any shields
     public int totalShields = 100;
-    //GameObject.FindGameObjectsWithTag("totalShields").Length; //calculate the initial number of shields into the scene, TO DO: auto calculate
+    //GameObject.FindGameObjectsWithTag("totalShields").Length; //calculate the initial number of shields into the scene
+    //TODO: auto calculate
 
     // Exploded Ship Image
     public Sprite explodedShipImage;
@@ -26,17 +27,20 @@ public class CommonLibrary : MonoBehaviour
         totalShields = characterDataNew.totalShields;
         characterDataNew = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //save it
         //var textPlayerName = GameObject.Find("PlayerName").GetComponent<Text>();
-        //textPlayerName.text = characterDataNew.characterName.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
+        //textPlayerName.text = characterDataNew.characterName.ToString(); //set the saved value if exists.
+        //TODO: this has a bug, solve id pending...
 
         //var textAmmo = GameObject.Find("AmmoCount").GetComponent<Text>();
-        //textPlayerName.text = characterDataNew.Ammo.ToString(); //set the saved value if exists. //TO DO: this has a bug, solve id pending...
+        //textPlayerName.text = characterDataNew.Ammo.ToString(); //set the saved value if exists.
+        //TODO: this has a bug, solve id pending...
 
 
         if (GameObject.Find("PlayerName") != null) //validate if object label text exists
         {
             Text textNombreJugador = GameObject.Find("PlayerName").GetComponent<Text>();
             textNombreJugador.text = ""; //clear the text
-                                         //characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
+            //characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
+            //TODO: usar el método de arriba para recoger el nombre del jugador, es mucho más elegante.
             var characterName = PlayerPrefs.GetString("characterName_CharacterSlot" + 0);
             textNombreJugador.text = characterName;
         }
@@ -73,7 +77,8 @@ public class CommonLibrary : MonoBehaviour
             CommonLibrary.Instance.ModifyWinStateText("All aliens Destroyed.");
             victory = true;
         }
-        //CommonLibrary.Instance.ModifyTextUIScore(100);//modify score //TO DO: hacer solo una vez, no en bucle
+        //CommonLibrary.Instance.ModifyTextUIScore(100);//modify score
+        //TODO: hacer solo una vez, no en bucle
     }
     /*
      * @description: count the aliens left & show it into AlienCount text.
