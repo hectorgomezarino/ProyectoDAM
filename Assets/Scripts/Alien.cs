@@ -36,8 +36,7 @@ public class Alien : MonoBehaviour
 
     Coroutine alienRoutine;
 
-    void Start()
-    {
+    void Start() {
 
         rigidBody = GetComponent<Rigidbody2D>();
 
@@ -57,16 +56,14 @@ public class Alien : MonoBehaviour
     }
 
     // Changes the direction for the Alien object
-    void Turn(int direction)
-    {
+    void Turn(int direction) {
         Vector2 newVelocity = rigidBody.velocity;
         newVelocity.x = speed * direction;
         rigidBody.velocity = newVelocity;
     }
 
     // Moves the Alien vertically down
-    void MoveDown()
-    {
+    void MoveDown() {
         Vector2 position = transform.position;
         position.y -= 10; //el alien baja esos px.
         transform.position = position;
@@ -76,18 +73,15 @@ public class Alien : MonoBehaviour
     // Switch direction on collision
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name == "VertWallLeft")
-        {
+        if (col.gameObject.name == "VertWallLeft") {
             Turn(1);
             MoveDown();
         }
-        if (col.gameObject.name == "VertWallRigth")
-        {
+        if (col.gameObject.name == "VertWallRigth") {
             Turn(-1);
             MoveDown();
         }
-        if (col.gameObject.tag == "Bullet")
-        {
+        if (col.gameObject.tag == "Bullet") {
             SoundManager.Instance.PlayOneShot(SoundManager.Instance.alienDies);
             Destroy(gameObject);
         }
@@ -105,16 +99,13 @@ public class Alien : MonoBehaviour
     {
         while (true)
         { //TODO: bug detected, when alien is destroyed the new sprite by movement appears one second
-            if (spriteRenderer.sprite == startingImage)
-            {
+            if (spriteRenderer.sprite == startingImage) {
                 spriteRenderer.sprite = altImage;
                 if (SoundManager.Instance) //added by crash
                 {
                     SoundManager.Instance.PlayOneShot(SoundManager.Instance.alienBuzz1);
                 }
-            }
-            else
-            {
+            } else {
                 spriteRenderer.sprite = startingImage;
                 if (SoundManager.Instance) //added by crash
                 {
@@ -128,8 +119,7 @@ public class Alien : MonoBehaviour
     // Have Aliens fire bullets (Ammo) at random times
     void FixedUpdate()
     {
-        if (Time.time > baseFireWaitTime)
-        {
+        if (Time.time > baseFireWaitTime) {
             baseFireWaitTime = baseFireWaitTime + Random.Range(minFireRateTime, maxFireRateTime); //generate next time
             Instantiate(alienBullet, transform.position, Quaternion.identity); //create alienBullet
         }
@@ -144,7 +134,7 @@ public class Alien : MonoBehaviour
         {
             // Destroy AlienBullet
             //Destroy(gameObject); //remove it?
-            var player = GameObject.Find("SpaceShip").GetComponent<Collider2D>(); //get the player colider for GameDefeat method
+            Collider2D player = GameObject.Find("SpaceShip").GetComponent<Collider2D>(); //get the player colider for GameDefeat method
             CommonLibrary.Instance.GameDefeat(player);
             //CommonLibrary.Instance.GameDefeat(col);
         }

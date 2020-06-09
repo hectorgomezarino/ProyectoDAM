@@ -1,6 +1,4 @@
-﻿ using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
@@ -10,7 +8,7 @@ public class CommonLibrary : MonoBehaviour
     public static CommonLibrary Instance = null;
     public CharacterData characterDataNew; //character data values
     private bool shieldsOngoing = true; //bool to see if there are any shields
-    public int totalShields = 100;
+    public int totalShields = 100; //init to 100, but updated depending user selection.
     //GameObject.FindGameObjectsWithTag("totalShields").Length; //calculate the initial number of shields into the scene
     //TODO: auto calculate
 
@@ -20,12 +18,11 @@ public class CommonLibrary : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (Instance == null)
-        {
+        if (Instance == null) {
             Instance = this;
         }
+        characterDataNew = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
         totalShields = characterDataNew.totalShields;
-        characterDataNew = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //save it
         //var textPlayerName = GameObject.Find("PlayerName").GetComponent<Text>();
         //textPlayerName.text = characterDataNew.characterName.ToString(); //set the saved value if exists.
         //TODO: this has a bug, solve id pending...
@@ -56,7 +53,7 @@ public class CommonLibrary : MonoBehaviour
         SoundManager.Instance.PlayOneShot(SoundManager.Instance.shipExplosion); // Play exploding ship sound
         col.GetComponent<SpriteRenderer>().sprite = explodedShipImage; // Change to exploded ship image
         CommonLibrary.Instance.ModifyTextUIScore(-100);//modify score
-        CommonLibrary.Instance.ModifyFailStateText("You Lose.");
+        CommonLibrary.Instance.ModifyFailStateText("You Lose."); //TODO: bug, a veces aparece dos veces?!?!
         var textUIComp = GameObject.Find("DefeatText").GetComponent<Text>();
         textUIComp.enabled = true; // enable DEFEAT text
         Destroy(col.gameObject, 0.5f); // Wait .5 seconds and then destroy Player
@@ -89,8 +86,8 @@ public class CommonLibrary : MonoBehaviour
     {
         var aliens = GameObject.FindGameObjectsWithTag("Alien");
         var textAlienUIComp = GameObject.Find("AlienCount").GetComponent<Text>();
-        if (aliens.Length == 0) //you win OR set the Nave Nodriza.
-        {
+        //you win OR set the Nave Nodriza (TODO).
+        if (aliens.Length == 0) {
             CommonLibrary.Instance.GameWin();
         }
         textAlienUIComp.text = aliens.Length.ToString();
@@ -166,14 +163,12 @@ public class CommonLibrary : MonoBehaviour
         if (totalShields>0)
             percentShields = (currentShields * 100) / totalShields;
 
-        if (currentShields == 0 && shieldsOngoing) //set the text: no shields
-        {
+        //set the text: no shields
+        if (currentShields == 0 && shieldsOngoing) {
             CommonLibrary.Instance.ModifyFailStateText("NO shields!"); //modify text
             CommonLibrary.Instance.ModifyShieldsPercent(percentShields.ToString()); //modify text
             shieldsOngoing = false; //hace que no se vuelva a entrar en este pedazo de código
-        }
-        else
-        {
+        } else {
             if (shieldsOngoing) //mientras queden escudos siempre entrará aquí.
                 CommonLibrary.Instance.ModifyShieldsPercent(percentShields.ToString()); //modify text
         }

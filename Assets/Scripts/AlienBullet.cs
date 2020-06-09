@@ -23,7 +23,7 @@ public class AlienBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (col.gameObject.tag == "Player") //allien colide with player, defead
+        if (col.gameObject.tag == "Player") //allien colide with player, defeat
         {
             // Destroy AlienBullet
             Destroy(gameObject);
