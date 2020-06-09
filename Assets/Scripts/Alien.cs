@@ -95,7 +95,8 @@ public class Alien : MonoBehaviour
         {
             var player = GameObject.Find("SpaceShip").GetComponent<Collider2D>(); //get the player colider for GameDefeat method
             CommonLibrary.Instance.GameDefeat(player);
-            StopCoroutine(alienRoutine); // stop the coroutine //stop alien coroutine //TODO: this must be into GameDefeat
+            StopCoroutine(alienRoutine); // stop the coroutine //stop alien coroutine
+		//TODO: this must be into GameDefeat
         }
     }
 

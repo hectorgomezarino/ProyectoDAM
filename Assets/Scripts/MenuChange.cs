@@ -16,7 +16,8 @@ public class MenuChange : MonoBehaviour
             //characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
             //TODO: usar el método de arriba para recoger el nombre del jugador, es mucho más elegante.
             var characterName = PlayerPrefs.GetString("characterName_CharacterSlot" + 0);
-            textNombreJugador.text = characterDataVal.characterName;
+            //textNombreJugador.text = characterDataVal.characterName;
+	    textNombreJugador.text = characterName;
         }
     }
 
