@@ -20,11 +20,4 @@ public class CustomVariableClass : MonoBehaviour
     {
 
     }
-
-    public CustomVariableClass(int scoreInt, string nameStr, float timePlayedF)
-    {
-        score = scoreInt;
-        name = nameStr;
-        timePlayed = timePlayedF;
-    }
 }

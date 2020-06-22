@@ -69,10 +69,19 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
 
         Debug.Log("loaded character: LoadCharacter()");
         return loadedCharacter;
+
+
+        /*public string dificulty;
+        public float timePlayed;*/
     }
 
 
 
+
+    /*public CustomVariableClass(float timePlayedF)
+    {
+        timePlayed = timePlayedF;
+    }*/
 
     /*test function, no es funcional ahora mismo TODO: todo.*/
     /*public void CustomVariableClass(int scoreInt, string nameStr, float timePlayedF)
