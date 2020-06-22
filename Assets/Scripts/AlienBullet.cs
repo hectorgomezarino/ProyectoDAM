@@ -5,7 +5,7 @@ public class AlienBullet : MonoBehaviour
 {
 
     private Rigidbody2D rigidBody;
-    public float speed = 30; //change this for more alien bullet speed
+    public float speed = 25; //change this for more alien bullet speed
     public Sprite explodedShipImage;
 
 

@@ -72,10 +72,9 @@ public class CommonLibrary : MonoBehaviour
         textUIComp.enabled = true; // enable DEFEAT text
         if (!victory) {
             CommonLibrary.Instance.ModifyWinStateText("All aliens Destroyed.");
+            CommonLibrary.Instance.ModifyTextUIScore(100);//modify score
             victory = true;
         }
-        //CommonLibrary.Instance.ModifyTextUIScore(100);//modify score
-        //TODO: hacer solo una vez, no en bucle
     }
     /*
      * @description: count the aliens left & show it into AlienCount text.
@@ -94,8 +93,8 @@ public class CommonLibrary : MonoBehaviour
     }
 
     /*
-     * @description: set the score into score text
-     * @param int toScore: int with modify number
+     * @description: set the score into score text & into the player pefs saver
+     * @param int toScore: int with modify number, cant to sum
      * 
      * 
      */
@@ -104,7 +103,12 @@ public class CommonLibrary : MonoBehaviour
         var textUIComp = GameObject.Find("Score").GetComponent<Text>();
         int score = int.Parse(textUIComp.text);
         score += toScore;
-        textUIComp.text = score.ToString();
+        textUIComp.text = score.ToString(); //actualizamos marcador
+        PlayerPrefs.SetInt("score", score);
+
+        // Más elegante, como sigue -> 
+        //characterDataNew.score = score; //set the new score with the calculated
+        //PlayerPrefsCharacterSaver.Instance.CustomAction('S', characterDataNew); //save it
     }
 
     /*

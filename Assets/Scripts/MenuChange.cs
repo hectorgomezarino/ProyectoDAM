@@ -8,16 +8,23 @@ public class MenuChange : MonoBehaviour
 
     // Use this for initialization
     // Start is called before the first frame update
-    void Start () {
+    void Start() {
         if (GameObject.Find("NombreJugadorText") != null) //validate if object label text exists
         {
             Text textNombreJugador = GameObject.Find("NombreJugadorText").GetComponent<Text>();
-            textNombreJugador.text = ""; //clear the text
             //characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
             //TODO: usar el método de arriba para recoger el nombre del jugador, es mucho más elegante.
             var characterName = PlayerPrefs.GetString("characterName_CharacterSlot" + 0);
             //textNombreJugador.text = characterDataVal.characterName;
-	    textNombreJugador.text = characterName;
+            textNombreJugador.text = characterName;
+        }
+        //validate if object label text exists
+        if (GameObject.Find("MaxScoreText") != null)
+        {
+            //TODO: usar el método de arriba para recoger el valor, es mucho más elegante.
+            Text MaxScoreText = GameObject.Find("MaxScoreText").GetComponent<Text>();
+            int score = PlayerPrefs.GetInt("score");
+            MaxScoreText.text = score.ToString();
         }
     }
 
