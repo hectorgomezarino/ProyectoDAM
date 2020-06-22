@@ -13,3 +13,6 @@ Memora del prouyecto -> https://github.com/hectorgomezarino/ProyectoDAM/blob/mas
 Diagrama de Gantt -> https://github.com/hectorgomezarino/ProyectoDAM/blob/master/Diagrama%20de%20Gantt%20-%20Juego.xlsx
 
 Presentación del proyecto -> https://github.com/hectorgomezarino/ProyectoDAM/blob/master/Presentaci%C3%B3nProyecto.odp
+
+
+ https://us04web.zoom.us/j/77235138361?pwd=LzB6NWVoWHkwNXlwMnFwOVdLRmV0Zz09
