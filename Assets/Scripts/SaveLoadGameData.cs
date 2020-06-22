@@ -25,24 +25,35 @@ public class SaveLoadGameData : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        /*characterDataVal = PlayerPrefsCharacterSaver.Instance.CustomAction('L', characterDataVal); //load it
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space) 
+                ||  (Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey("enter")) 
+            ) {
+            SaveOptions();
+        }*/
+    }
 
     public void SaveOptions()
     {
         var textUIComp = GameObject.Find("InfoText").GetComponent<Text>();
         textUIComp.text = ""; //clear the text
-        var textNombreJugador = GameObject.Find("NombreJugadorText").GetComponent<Text>();
+        Text textNombreJugador = GameObject.Find("NombreJugadorText").GetComponent<Text>();
         textNombreJugador.text = ""; //clear the text
-        string userName = userNameInputField.text;
-        characterDataVal.characterName = userName; //set the new userName with the writed into field
-        PlayerPrefsCharacterSaver.Instance.CustomAction('S', characterDataVal); //save it
-        StartCoroutine(ExecuteAfterTime(0.5f, () =>
-        {
-            //Add somwthing here
-            textUIComp = GameObject.Find("InfoText").GetComponent<Text>();
-            textUIComp.text = "Info Saved.";
-            textNombreJugador = GameObject.Find("NombreJugadorText").GetComponent<Text>();
-            textNombreJugador.text = userName;
-        }));
+        string newUserName = userNameInputField.text;
+        if ((characterDataVal.characterName != null) && (characterDataVal != null)) {
+            characterDataVal.characterName = newUserName; //set the new userName with the writed into field
+            PlayerPrefsCharacterSaver.Instance.CustomAction('S', characterDataVal); //save it
+
+            //delay coroutine ->
+            StartCoroutine(ExecuteAfterTime(0.5f, () =>
+            {
+                textUIComp.text = "Info Saved.";
+                textNombreJugador.text = newUserName;
+            }));
+        }
     }
 
     private System.Collections.IEnumerator ExecuteAfterTime(float time, Action task)
