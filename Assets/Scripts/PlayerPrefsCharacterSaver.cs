@@ -57,22 +57,17 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
         PlayerPrefs.SetFloat("power_CharacterSlot" + characterSlot, data.power);
         PlayerPrefs.SetInt("bullets_CharacterSlot" + characterSlot, data.Ammo);
         PlayerPrefs.Save();
-        Debug.Log("saved character : SaveCharacter()");
     }
 
     static CharacterData LoadCharacter(int characterSlot)
     {
-        CharacterData loadedCharacter = new CharacterData();
-        loadedCharacter.characterName = PlayerPrefs.GetString("characterName_CharacterSlot" + characterSlot);
-        loadedCharacter.power = PlayerPrefs.GetFloat("power_CharacterSlot" + characterSlot);
-        loadedCharacter.Ammo = PlayerPrefs.GetInt("bullets_CharacterSlot" + characterSlot);
+        CharacterData loadedCharacter = new CharacterData {
+            characterName = PlayerPrefs.GetString("characterName_CharacterSlot" + characterSlot),
+            power = PlayerPrefs.GetFloat("power_CharacterSlot" + characterSlot),
+            Ammo = PlayerPrefs.GetInt("bullets_CharacterSlot" + characterSlot)
+        };
 
-        Debug.Log("loaded character: LoadCharacter()");
         return loadedCharacter;
-
-
-        /*public string dificulty;
-        public float timePlayed;*/
     }
 
 

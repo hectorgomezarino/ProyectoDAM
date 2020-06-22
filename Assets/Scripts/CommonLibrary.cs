@@ -21,6 +21,7 @@ public class CommonLibrary : MonoBehaviour
         if (Instance == null) {
             Instance = this;
         }
+        victory = false;
         characterDataNew = PlayerPrefsCharacterSaver.Instance.CustomAction('L', null); //load it
         totalShields = characterDataNew.totalShields;
         //var textPlayerName = GameObject.Find("PlayerName").GetComponent<Text>();
