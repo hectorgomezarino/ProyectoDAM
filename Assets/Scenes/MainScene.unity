@@ -544,6 +544,9 @@ MonoBehaviour:
     power: 0
     Ammo: 200
     totalShields: 100
+    score: 0
+    dificulty: 
+    timePlayed: 0
 --- !u!4 &103004218
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,6 +1127,9 @@ MonoBehaviour:
     power: 0
     Ammo: 200
     totalShields: 100
+    score: 0
+    dificulty: 
+    timePlayed: 0
   totalShields: 100
   explodedShipImage: {fileID: 21300014, guid: eaf75600dd0bf4694a8f7e01d41567bb, type: 3}
 --- !u!4 &214150976
@@ -2346,13 +2352,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 100
+  Priority: 5
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -8451,6 +8457,9 @@ MonoBehaviour:
     power: 0
     Ammo: 200
     totalShields: 100
+    score: 0
+    dificulty: 
+    timePlayed: 0
 --- !u!4 &1880387126
 Transform:
   m_ObjectHideFlags: 0

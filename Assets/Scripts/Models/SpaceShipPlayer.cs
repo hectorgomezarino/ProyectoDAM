@@ -13,9 +13,11 @@ public class SpaceShipPlayer : MonoBehaviour
     void Start()
     {
         //recoger variable de otro script cargado en el contexto:
-        /*GameObject CommonLibrary = GameObject.Find("CommonLibrary");
-        CommonLibrary otroScript = CommonLibrary.GetComponent<CommonLibrary>();
-        Debug.Log(otroScript.victory);*/
+        /*
+         * Pendiente de validar:       
+         * GameObject CommonLibrary = GameObject.Find("CommonLibrary");
+         * CommonLibrary otroScript = CommonLibrary.GetComponent<CommonLibrary>();
+        */
     }
 
     void FixedUpdate()
